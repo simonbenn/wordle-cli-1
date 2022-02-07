@@ -117,3 +117,8 @@ class Game:
                     return False
         
         return True
+    
+    def give_hints (self, guess:str) -> list: 
+        r = re.compile(guess)
+        newlist = list(filter(r.match, self.VALID_GUESSES)) 
+        return newlist
